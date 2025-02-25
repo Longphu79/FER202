@@ -21,7 +21,7 @@ function App() {
 
       <input 
         type="number" 
-        value={age} 
+        value={age}   
         onChange={(e) => setAge(parseInt(e.target.value, 10))} 
       />
       <p>My age is {age}</p>
