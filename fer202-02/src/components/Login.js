@@ -19,9 +19,9 @@ const Login = () => {
 
     if (userName === validUser.userName && password === validUser.password) {
       setError('');
-      navigate('/products'); // Chuyển hướng sau khi đăng nhập thành công
+      navigate('/cars'); // Chuyển hướng sau khi đăng nhập thành công
     } else {
-      setError('TK hoặc mật khẩu không đúng!');
+      setError('Invalid username or password');
     }
   };
 

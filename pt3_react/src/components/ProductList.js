@@ -30,7 +30,7 @@ const ProductList = () => {
                 <Card.Title>{product.name}</Card.Title>
                 <Card.Text>{product.description}</Card.Text>
                 <Card.Text className="text-primary fw-bold">{product.price}</Card.Text>
-                <Link to={`/Products/${product.id}`}>
+                <Link to={`/products/${product.id}`}>
                   <Button variant="primary" className="w-100">View Details</Button>
                 </Link>
               </Card.Body>

@@ -1,29 +1,21 @@
-
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "./components/Login";
+import ProductList from "./components/ProductList";
+import ProductDetails from "./components/ProductDetails";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React, { Suspense, lazy } from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import Home from "./components/Home";
 
-const Home = lazy(() => import("./components/Home"));
-const Login = lazy(() => import("./components/Login"));
-const ProductList = lazy(() => import("./components/ProductList"));
-const ProductDetails = lazy(() => import("./components/ProductDetails"));
-
-
-const App = () => {
+function App() {
   return (
     <Router>
-      <Suspense fallback={<div className="text-center mt-5">Loading...</div>}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/posts" element={<ProductList />} />
-          <Route path="/details" element={<ProductDetails />} />
-          <Route path="*" element={<Navigate to="/" />} />
-        </Routes>
-      </Suspense>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/products" element={<ProductList />} />
+        <Route path="/products/:id" element={<ProductDetails />} />
+      </Routes>
     </Router>
   );
-};
+}
 
 export default App;
